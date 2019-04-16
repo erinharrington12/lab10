@@ -1,7 +1,6 @@
+import java.awt.Graphics;
 
 public interface Drawable
 {
-    public draw(Graphics graphics) {
-        
-    }
+    public void draw(Graphics graphics);
 }
