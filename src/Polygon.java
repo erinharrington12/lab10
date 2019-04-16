@@ -7,8 +7,21 @@ public abstract class Polygon extends Shape
         super(color, filled);
     }
     
-    
+    @Override
     public void draw(Graphics graphics) {
+        
+        int[] x = new int[location.length];
+        int[] y = new int[location.length];
+        
+        
+        for (int j = 0; j < location.length; j++) {
+            x[j] = (int) location[j].getX();
+            y[j] = (int) location[j].getY();
+        }
+        
+        
+        graphics.drawPolygon(x, y, location.length);
+        
         
     }
 }
