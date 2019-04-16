@@ -18,12 +18,13 @@ public abstract class Shape implements Drawable
     }
     
     public boolean isFilled() {
-        if(filled = true) {
-            filled = true;
+        
+        if(filled == true) {
+           return true;
         } else {
-            filled = false;
+           return false;
         }
-        return filled;
+        
         
     }
     

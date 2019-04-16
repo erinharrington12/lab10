@@ -11,4 +11,16 @@ public class TriangleTest
         fail("Not yet implemented");
     }
 
+    @Test
+    public void testRightTriangle()
+    {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testIsoTriangle()
+    {
+        fail("Not yet implemented");
+    }
+    
 }
