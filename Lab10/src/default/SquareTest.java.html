@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>SquareTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (Apr 16, 2019 11:47:25 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SquareTest.java</span></div><h1>SquareTest.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import java.awt.Color;
+import java.awt.Point;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+<span class="fc" id="L9">public class SquareTest</span>
+{
+
+    @Test
+    public void testSquare()
+    {
+<span class="fc" id="L15">        Square sq1 = new Square(new Point(100, 100), 50, Color.BLACK, true);</span>
+
+<span class="fc" id="L17">        Point upperLeft1 = new Point(100, 100);</span>
+<span class="fc" id="L18">        Point upperRight1 = new Point(150, 100);</span>
+<span class="fc" id="L19">        Point lowerLeft1 = new Point(100, 50);</span>
+<span class="fc" id="L20">        Point lowerRight1 = new Point(150, 50);</span>
+
+        // Test if the points are there
+
+<span class="fc" id="L24">        Point[] pts1 = sq1.getLocation();</span>
+<span class="fc" id="L25">        Assert.assertEquals(4, pts1.length);</span>
+<span class="fc" id="L26">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, upperLeft1));</span>
+<span class="fc" id="L27">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, upperRight1));</span>
+<span class="fc" id="L28">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, lowerLeft1));</span>
+<span class="fc" id="L29">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, lowerRight1));</span>
+
+        // Verify if the rectangle is properly filled
+<span class="fc" id="L32">        Assert.assertTrue(sq1.isFilled());</span>
+
+        // Verify if the diamond has the right color
+
+<span class="fc" id="L36">        Color s1 = sq1.getColor();</span>
+<span class="fc" id="L37">        Assert.assertEquals(Color.BLACK, s1);</span>
+<span class="fc" id="L38">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>TestRunner (Apr 16, 2019 11:47:25 PM)</div></body></html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Oval.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (Apr 16, 2019 11:47:25 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Oval.java</span></div><h1>Oval.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
+public class Oval extends Shape
+{
+    private int diameter1;
+    private int diameter2;
+
+    /**
+     * 
+     * @param pointUL Upper left corner of the bounding box
+     * @param d1      Diameter from left to right
+     * @param d2      Diameter from top to bottom
+     * @param color   Desired color of the oval
+     * @param filled  Whether or not the oval should be filled
+     */
+    public Oval(Point pointUL, int d1, int d2, Color color, boolean filled)
+    {
+<span class="fc" id="L25">        super(color, filled);</span>
+
+<span class="fc" id="L27">        location = new Point[1];</span>
+<span class="fc" id="L28">        location[0] = pointUL;</span>
+
+<span class="fc" id="L30">        diameter1 = d1;</span>
+<span class="fc" id="L31">        diameter2 = d2;</span>
+
+<span class="fc" id="L33">    }</span>
+
+    /**
+     * 
+     * @return diameter left to right
+     */
+    public int getDiameter1()
+    {
+<span class="fc" id="L41">        return diameter1;</span>
+    }
+
+    /**
+     * 
+     * @return diameter top to bottom
+     */
+    public int getDiameter2()
+    {
+<span class="fc" id="L50">        return diameter2;</span>
+    }
+
+    /**
+     * Draw Oval
+     */
+    public void draw(Graphics graphics)
+    {
+<span class="nc" id="L58">        graphics.setColor(this.getColor());</span>
+<span class="nc" id="L59">        graphics.fillOval((int) location[0].getX(), (int) location[0].getY(), diameter1, diameter2);</span>
+
+<span class="nc" id="L61">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>TestRunner (Apr 16, 2019 11:47:25 PM)</div></body></html>

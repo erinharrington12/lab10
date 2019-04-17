@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DrawFrame.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (Apr 16, 2019 11:47:25 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">DrawFrame.java</span></div><h1>DrawFrame.java</h1><pre class="source lang-java linenums">import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Point;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
+public class DrawFrame extends JFrame
+{
+    private static DrawPanel drawPanel;
+    
+    public DrawFrame(String title) {
+<span class="nc" id="L19">        super(title);</span>
+<span class="nc" id="L20">    }</span>
+    
+    public static void main(String[] args) throws IOException {
+<span class="nc" id="L23">        DrawFrame appFrame = new DrawFrame(&quot;Panda&quot;);</span>
+<span class="nc" id="L24">        drawPanel = new DrawPanel();</span>
+<span class="nc" id="L25">        appFrame.setSize(900,700);</span>
+        
+<span class="nc" id="L27">        Rectangle sky = new Rectangle(new Point(0,450), 900, 450, Color.CYAN, true);</span>
+<span class="nc" id="L28">        Rectangle ground = new Rectangle(new Point(0,900), 900, 450, Color.GREEN, true);</span>
+<span class="nc" id="L29">        Oval body = new Oval(new Point(350, 300), 170, 220, Color.WHITE, true);</span>
+<span class="nc" id="L30">        Circle arm = new Circle(new Point(330, 450), 75, Color.BLACK, true);</span>
+<span class="nc" id="L31">        Circle arm2 = new Circle(new Point(460, 450), 75, Color.BLACK, true);</span>
+<span class="nc" id="L32">        Circle arm3 = new Circle(new Point(485, 330), 65, Color.BLACK, true);</span>
+<span class="nc" id="L33">        Circle arm4 = new Circle(new Point(310, 330), 65, Color.BLACK, true);</span>
+<span class="nc" id="L34">        Circle head = new Circle(new Point(360, 200), 150, Color.WHITE, true);</span>
+<span class="nc" id="L35">        IsoscelesTriangle ear1 = new IsoscelesTriangle(new Point(370, 225), 50, -50, Color.BLACK, true);</span>
+<span class="nc" id="L36">        IsoscelesTriangle ear2 = new IsoscelesTriangle(new Point(450, 225), 50, -50, Color.BLACK, true);</span>
+<span class="nc" id="L37">        Diamond flower = new Diamond(new Point(600, 600), 45, Color.MAGENTA, true);</span>
+<span class="nc" id="L38">        Diamond flower2 = new Diamond(new Point(50, 500), 30, Color.ORANGE, true);</span>
+<span class="nc" id="L39">        Diamond flower3 = new Diamond(new Point(200, 600), 35, Color.RED, true);</span>
+<span class="nc" id="L40">        Circle sun = new Circle(new Point(750, 10), 200, Color.YELLOW, true);</span>
+<span class="nc" id="L41">        Oval cloud = new Oval(new Point(60, 50), 220, 50, Color.WHITE, true);</span>
+<span class="nc" id="L42">        Oval cloud2 = new Oval(new Point(-10, 300), 150, 50, Color.WHITE, true);</span>
+       
+        
+<span class="nc" id="L45">        appFrame.add(drawPanel);</span>
+        
+        
+<span class="nc" id="L48">        drawPanel.addShape(sky);</span>
+<span class="nc" id="L49">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L51">        drawPanel.addShape(ground);</span>
+<span class="nc" id="L52">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L54">        drawPanel.addShape(body);</span>
+<span class="nc" id="L55">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L57">        drawPanel.addShape(arm);</span>
+<span class="nc" id="L58">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L60">        drawPanel.addShape(arm2);</span>
+<span class="nc" id="L61">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L63">        drawPanel.addShape(arm3);</span>
+<span class="nc" id="L64">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L66">        drawPanel.addShape(arm4);</span>
+<span class="nc" id="L67">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L69">        drawPanel.addShape(head);</span>
+<span class="nc" id="L70">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L72">        drawPanel.addShape(ear1);</span>
+<span class="nc" id="L73">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L75">        drawPanel.addShape(ear2);</span>
+<span class="nc" id="L76">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L78">        drawPanel.addShape(flower);</span>
+<span class="nc" id="L79">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L81">        drawPanel.addShape(flower2);</span>
+<span class="nc" id="L82">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L84">        drawPanel.addShape(flower3);</span>
+<span class="nc" id="L85">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L87">        drawPanel.addShape(sun);</span>
+<span class="nc" id="L88">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L90">        drawPanel.addShape(cloud);</span>
+<span class="nc" id="L91">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L93">        drawPanel.addShape(cloud2);</span>
+<span class="nc" id="L94">        drawPanel.setVisible(true);</span>
+        
+<span class="nc" id="L96">        appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L97">        appFrame.setVisible(true);</span>
+        
+<span class="nc" id="L99">        PanelToImage.makePanelPNGImage(drawPanel, &quot;Lab10, panda&quot;);</span>
+<span class="nc" id="L100">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>TestRunner (Apr 16, 2019 11:47:25 PM)</div></body></html>

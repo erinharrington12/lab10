@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>IsoscelesTriangle.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (Apr 16, 2019 11:47:25 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">IsoscelesTriangle.java</span></div><h1>IsoscelesTriangle.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
+public class IsoscelesTriangle extends Triangle
+{
+    /**
+     * 
+     * @param pointLB The point on the base of an isosceles triangle that is NOT the right angle
+     * @param base The width of the base.
+     * @param height The height at the apex of the triangle (negative to flip the orientation).
+     * @param color Desired color of the triangle.
+     * @param fill Whether or not the triangle should be filled.
+     */
+    public IsoscelesTriangle(Point pointLB, int base, int height, Color color, boolean fill)
+    {
+<span class="fc" id="L20">        super(pointLB, color, fill);</span>
+        
+     // Determines the position of the points based on the sign of the height
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (height &gt; 0)</span>
+        {
+<span class="fc" id="L25">            location[1] = new Point(pointLB.x + (base/2), pointLB.y + height); // Highest point</span>
+<span class="fc" id="L26">            location[2] = new Point(pointLB.x + base, pointLB.y); // Base point</span>
+<span class="fc" id="L27">        }</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        else if (height &lt; 0)</span>
+        {
+<span class="fc" id="L30">            location[1] = new Point(pointLB.x + (base/2), pointLB.y + height); //Highest point</span>
+<span class="fc" id="L31">            location[2] = new Point(pointLB.x + base, pointLB.y); // Base point</span>
+        }
+<span class="fc" id="L33">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>TestRunner (Apr 16, 2019 11:47:25 PM)</div></body></html>

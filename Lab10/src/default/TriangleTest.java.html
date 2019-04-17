@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TriangleTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (Apr 16, 2019 11:47:25 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">TriangleTest.java</span></div><h1>TriangleTest.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import java.awt.Color;
+import java.awt.Point;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+<span class="fc" id="L9">public class TriangleTest</span>
+{
+
+   
+
+    @Test
+    public void testRightTriangle()
+    {
+<span class="fc" id="L17">        RightTriangle rt1 = new RightTriangle(new Point(100, 100), 50, 50, Color.BLACK, true);</span>
+<span class="fc" id="L18">        Point starterPoint1 = new Point(100, 100);</span>
+<span class="fc" id="L19">        Point topPoint1 = new Point(100, 50);</span>
+<span class="fc" id="L20">        Point basePoint1 = new Point(150, 100);</span>
+        
+        
+<span class="fc" id="L23">        RightTriangle rt2 = new RightTriangle(new Point(100, 100), 50, -50, Color.CYAN, true);</span>
+<span class="fc" id="L24">        Point starterPoint2 = new Point(100, 100);</span>
+<span class="fc" id="L25">        Point topPoint2 = new Point(100, 150);</span>
+<span class="fc" id="L26">        Point basePoint2 = new Point(150, 100);</span>
+        
+        
+<span class="fc" id="L29">        RightTriangle rt3 = new RightTriangle(new Point(100, 100), 50, 50, Color.BLACK, false);</span>
+<span class="fc" id="L30">        Point starterPoint3 = new Point(100, 100);</span>
+<span class="fc" id="L31">        Point topPoint3 = new Point(100, 50);</span>
+<span class="fc" id="L32">        Point basePoint3 = new Point(150, 100);</span>
+        
+<span class="fc" id="L34">        RightTriangle rt4 = new RightTriangle(new Point(100, 100), 50, -50, Color.CYAN, false);</span>
+<span class="fc" id="L35">        Point starterPoint4 = new Point(100, 100);</span>
+<span class="fc" id="L36">        Point topPoint4 = new Point(100, 150);</span>
+<span class="fc" id="L37">        Point basePoint4 = new Point(150, 100);</span>
+        
+        //Test to see if all points are present
+<span class="fc" id="L40">        Point[] pts1 = rt1.getLocation();</span>
+<span class="fc" id="L41">        Assert.assertEquals(3, pts1.length);</span>
+<span class="fc" id="L42">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, starterPoint1));</span>
+<span class="fc" id="L43">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, topPoint1));</span>
+<span class="fc" id="L44">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, basePoint1));</span>
+        
+<span class="fc" id="L46">        Point[] pts2 = rt2.getLocation();</span>
+<span class="fc" id="L47">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, starterPoint2));</span>
+<span class="fc" id="L48">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, topPoint2));</span>
+<span class="fc" id="L49">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, basePoint2));</span>
+        
+        //Check if right triangle is filled
+<span class="fc" id="L52">        Assert.assertTrue(rt1.isFilled());</span>
+<span class="fc" id="L53">        Assert.assertTrue(rt2.isFilled());</span>
+<span class="fc" id="L54">        Assert.assertFalse(rt3.isFilled());</span>
+<span class="fc" id="L55">        Assert.assertFalse(rt4.isFilled());</span>
+        
+        //Check if right triangle has correct color
+<span class="fc" id="L58">        Color rect1 = rt1.getColor();</span>
+<span class="fc" id="L59">        Color rect2 = rt2.getColor();</span>
+<span class="fc" id="L60">        Assert.assertEquals(Color.BLACK, rect1);</span>
+<span class="fc" id="L61">        Assert.assertEquals(Color.CYAN, rect2);</span>
+        
+        
+<span class="fc" id="L64">    }</span>
+    
+    @Test
+    public void testIsoTriangle()
+    {
+<span class="fc" id="L69">        IsoscelesTriangle rt1 = new IsoscelesTriangle(new Point(100, 100), 50, 50, Color.BLACK, true);</span>
+<span class="fc" id="L70">        Point starterPoint1 = new Point(100, 100);</span>
+<span class="fc" id="L71">        Point topPoint1 = new Point(125, 150);</span>
+<span class="fc" id="L72">        Point basePoint1 = new Point(150, 100);</span>
+        
+        
+<span class="fc" id="L75">        IsoscelesTriangle rt2 = new IsoscelesTriangle(new Point(100, 100), 50, -50, Color.CYAN, true);</span>
+<span class="fc" id="L76">        Point starterPoint2 = new Point(100, 100);</span>
+<span class="fc" id="L77">        Point topPoint2 = new Point(125, 50);</span>
+<span class="fc" id="L78">        Point basePoint2 = new Point(150, 100);</span>
+        
+        
+<span class="fc" id="L81">        IsoscelesTriangle rt3 = new IsoscelesTriangle(new Point(100, 100), 50, 50, Color.BLACK, false);</span>
+<span class="fc" id="L82">        Point starterPoint3 = new Point(100, 100);</span>
+<span class="fc" id="L83">        Point topPoint3 = new Point(125, 150);</span>
+<span class="fc" id="L84">        Point basePoint3 = new Point(150, 100);</span>
+        
+<span class="fc" id="L86">        IsoscelesTriangle rt4 = new IsoscelesTriangle(new Point(100, 100), 50, -50, Color.CYAN, false);</span>
+<span class="fc" id="L87">        Point starterPoint4 = new Point(100, 100);</span>
+<span class="fc" id="L88">        Point topPoint4 = new Point(125, 50);</span>
+<span class="fc" id="L89">        Point basePoint4 = new Point(150, 100);</span>
+        
+        //Test to see if all points are present
+<span class="fc" id="L92">        Point[] pts1 = rt1.getLocation();</span>
+<span class="fc" id="L93">        Assert.assertEquals(3, pts1.length);</span>
+<span class="fc" id="L94">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, starterPoint1));</span>
+<span class="fc" id="L95">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, topPoint1));</span>
+<span class="fc" id="L96">        Assert.assertTrue(ShapeUtils.pointInSet(pts1, basePoint1));</span>
+        
+<span class="fc" id="L98">        Point[] pts2 = rt2.getLocation();</span>
+<span class="fc" id="L99">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, starterPoint2));</span>
+<span class="fc" id="L100">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, topPoint2));</span>
+<span class="fc" id="L101">        Assert.assertTrue(ShapeUtils.pointInSet(pts2, basePoint2));</span>
+        
+        //Check if right triangle is filled
+<span class="fc" id="L104">        Assert.assertTrue(rt1.isFilled());</span>
+<span class="fc" id="L105">        Assert.assertTrue(rt2.isFilled());</span>
+<span class="fc" id="L106">        Assert.assertFalse(rt3.isFilled());</span>
+<span class="fc" id="L107">        Assert.assertFalse(rt4.isFilled());</span>
+        
+        //Check if right triangle has correct color
+<span class="fc" id="L110">        Color rect1 = rt1.getColor();</span>
+<span class="fc" id="L111">        Color rect2 = rt2.getColor();</span>
+<span class="fc" id="L112">        Assert.assertEquals(Color.BLACK, rect1);</span>
+<span class="fc" id="L113">        Assert.assertEquals(Color.CYAN, rect2);</span>
+        
+        
+<span class="fc" id="L116">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>TestRunner (Apr 16, 2019 11:47:25 PM)</div></body></html>
