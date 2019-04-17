@@ -19,8 +19,8 @@ public abstract class Polygon extends Shape
             y[j] = (int) location[j].getY();
         }
         
-        
-        graphics.drawPolygon(x, y, location.length);
+        graphics.setColor(this.getColor());
+        graphics.fillPolygon(x, y, location.length);
         
         
     }

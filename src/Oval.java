@@ -28,7 +28,8 @@ public class Oval extends Shape
     }
     
     public void draw(Graphics graphics) {
+        graphics.setColor(this.getColor());
+        graphics.fillOval((int)location[0].getX(), (int)location[0].getY(), diameter1, diameter2);
         
-        graphics.drawOval((int)location[0].getX(), (int)location[0].getY(), diameter1, diameter2);
     }
 }

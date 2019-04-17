@@ -23,8 +23,8 @@ public class Rectangle extends Polygon
         // Assemble 4 points
         location[0] = pointUL; // Upper left corner
         location[1] = new Point(pointUL.x + width, pointUL.y); // Upper right corner
-        location[2] = new Point(pointUL.x, pointUL.y - height); // Lower left corner
-        location[3] = new Point(location[1].x, location[1].y - height); // Lower right corner
+        location[3] = new Point(pointUL.x, pointUL.y - height); // Lower left corner
+        location[2] = new Point(location[1].x, location[1].y - height); // Lower right corner
 
     }
 }

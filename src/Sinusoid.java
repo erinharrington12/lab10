@@ -75,10 +75,11 @@ public class Sinusoid extends Shape
 			// TODO: calculate next x,y point
 			//y = yOffset + amplitude * sin(radians)
 			//x = xOffset + i * dx;
-			int xNext = ... // TODO:
-			int yNext = ... // TODO:
+			int xNext = (int) (x0 + i * dx);// TODO:
+			int yNext = (int) (y0 + amplitude * Math.asin(rad)); // TODO:
 			
 			// TODO: create a point and store it into the locations list
+			location[i] = new Point(xNext, yNext);
 		}
 	}
 
