@@ -1,6 +1,10 @@
 import java.awt.Color;
 import java.awt.Point;
-
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
 public class IsoscelesTriangle extends Triangle
 {
     /**

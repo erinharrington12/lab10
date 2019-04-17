@@ -1,6 +1,11 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
 public abstract class Polygon extends Shape 
 {
     public Polygon(Color color, boolean filled) {

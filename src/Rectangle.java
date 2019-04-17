@@ -1,6 +1,11 @@
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
 public class Rectangle extends Polygon
 {
 

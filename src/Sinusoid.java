@@ -79,7 +79,10 @@ public class Sinusoid extends Shape
 			int yNext = (int) (y0 + amplitude * Math.asin(rad)); // TODO:
 			
 			// TODO: create a point and store it into the locations list
+			location[0] = new Point(x0, y0);
 			location[i] = new Point(xNext, yNext);
+			
+			
 		}
 	}
 

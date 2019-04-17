@@ -1,10 +1,16 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Point;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
 public class DrawFrame extends JFrame
 {
     private static DrawPanel drawPanel;
@@ -13,8 +19,8 @@ public class DrawFrame extends JFrame
         super(title);
     }
     
-    public static void main(String[] args) {
-        DrawFrame appFrame = new DrawFrame("An Empty Frame");
+    public static void main(String[] args) throws IOException {
+        DrawFrame appFrame = new DrawFrame("Panda");
         drawPanel = new DrawPanel();
         appFrame.setSize(900,700);
         
@@ -89,5 +95,7 @@ public class DrawFrame extends JFrame
         
         appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         appFrame.setVisible(true);
+        
+        PanelToImage.makePanelPNGImage(drawPanel, "Lab10, panda");
     }
 }

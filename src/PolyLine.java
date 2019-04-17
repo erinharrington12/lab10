@@ -1,6 +1,11 @@
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * 
+ * @author Erin Harrington
+ *
+ */
 public class PolyLine extends Polygon
 {
     /**
@@ -21,6 +26,7 @@ public class PolyLine extends Polygon
 
         location = new Point[4];
 
+        // Initializes points for the polyline
         location[0] = pointUL;
         location[1] = pointUR;
         location[2] = new Point(pointUR.x, pointUR.y + thickness);
