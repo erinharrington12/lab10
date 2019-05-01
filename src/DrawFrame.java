@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Point;
+
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -96,6 +97,8 @@ public class DrawFrame extends JFrame
         appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         appFrame.setVisible(true);
         
-        PanelToImage.makePanelPNGImage(drawPanel, "Lab10, panda");
+        PanelToImage.makePanelPNGImage(drawPanel, "Lab10Panda");
     }
 }
+
+
