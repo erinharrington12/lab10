@@ -1,3 +1,4 @@
 # lab10
 
-Picture created
+PNG of panda from lab 10:
+![Panda](relative/path/to/image/Lab10Panda.png)
