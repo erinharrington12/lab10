@@ -2,4 +2,4 @@
 
 PNG of panda from lab 10:
 
-![Panda](relative/git/repo/path/to/Lab10Panda) 
+![Panda](relative/git/repo/path/to/imagefile) 
